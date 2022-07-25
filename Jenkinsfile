@@ -6,9 +6,9 @@ pipeline {
     stages {
         stage('Build et Test'){
             steps{
-              bat "mvn compile"
-              bat "mvn package"
-              bat "mvn test"
+              sh "mvn compile"
+              sh "mvn package"
+              sh "mvn test"
             }
         }
         stage('build and push') {
