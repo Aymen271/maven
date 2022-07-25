@@ -4,13 +4,8 @@ pipeline {
     }
     agent any
     stages {
-        stage('Build et Test'){
-            steps{
-              sh "mvn compile"
-              sh "mvn package"
-              sh "mvn test"
-            }
-        }
+       
+        
         stage('build and push') {
             steps { 
                     sh"sudo docker build -t aymenchab/maven:1.0 ."                  
