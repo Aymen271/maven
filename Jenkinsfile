@@ -10,6 +10,7 @@ pipeline {
               bat "mvn package"
               bat "mvn test"
             }
+        }
         stage('build and push') {
             steps { 
                     sh"sudo docker build -t aymenchab/maven:1.0 ."                  
@@ -27,5 +28,5 @@ pipeline {
                    sh"sudo kubectl apply -f service.yml --namespace=test"
            }
            }
-         }
+         
 }
